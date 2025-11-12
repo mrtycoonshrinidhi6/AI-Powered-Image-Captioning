@@ -29,7 +29,7 @@ This project focuses on automatically generating captions for images using deep 
    ```
    pip install -r requirements.txt
    ```
-
+.\venv\Scripts\activate    
 3. Run the Streamlit app:
    ```
    streamlit run app.py

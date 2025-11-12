@@ -1,19 +1,18 @@
 import streamlit as st
 from keras.models import load_model
-from keras.preprocessing.sequence import pad_sequences
+from tensorflow.keras.preprocessing.sequence import pad_sequences
 import pickle
 import numpy as np
 
 from keras.applications.vgg16 import VGG16, preprocess_input
-from keras.preprocessing.image import load_img
-from keras.preprocessing.image import img_to_array
+from tensorflow.keras.preprocessing.image import load_img, img_to_array
 from keras.models import Model
 
 
 # Load the pre-trained model and tokenizer
 @st.cache(allow_output_mutation=True)
 def load_model_and_tokenizer():
-    model = load_model("./Model Building/model.h5")
+    model = load_model("D:\DataScience\AI-Powered-Image-Captioning\Model Building\model.h5")
 
     with open("./Preprocessing/tokenizer.pkl", "rb") as f:
         tokenizer = pickle.load(f)
